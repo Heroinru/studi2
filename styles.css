@@ -1971,3 +1971,35 @@ body {
     text-align: center !important;
   }
 }
+
+@media (min-width: 769px) {
+  .header .container {
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  #nav-menu {
+    display: flex !important;
+    flex-grow: 1 !important;
+    margin-left: 20px !important;
+  }
+
+  #nav-menu ul {
+    display: flex !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+
+  #nav-menu ul li {
+    flex: 1 1 auto !important;
+    text-align: center !important;
+  }
+
+  #nav-menu ul li a {
+    display: block !important;
+    padding: 15px 0 !important;
+  }
+}
