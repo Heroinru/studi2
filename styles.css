@@ -1895,3 +1895,34 @@ body {
     display: block !important;
   }
 }
+
+@media (max-width: 1024px) and (orientation: portrait) {
+  .header .container {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 15px 20px !important;
+  }
+  /* Лого слева, бургер справа */
+  .logo-container { order: 1; }
+  .burger-btn    { order: 2; }
+  .logo          { display: none !important; }
+  #nav-menu      { display: none !important; }
+  #nav-menu.active { display: block !important; }
+}
+
+@media (max-width: 1024px) and (orientation: landscape) {
+  .header .container {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 15px 20px !important;
+  }
+  /* Восстанавливаем ПК-настройки меню */
+  .logo           { display: block !important; }
+  .burger-btn     { display: none !important; }
+  .nav ul         { display: flex !important; }
+  #nav-menu       { display: block !important; position: static; }
+}
