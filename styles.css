@@ -1855,3 +1855,36 @@ body {
     border-bottom: none;
   }
 }
+
+@media (max-width: 768px) {
+  .header .container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 15px 20px !important;
+  }
+  /* Логотип слева */
+  .logo-container {
+    order: 1;
+  }
+  /* Бургер справа */
+  .burger-btn {
+    order: 2;
+  }
+  /* Скрываем название на мобильных */
+  .logo {
+    display: none !important;
+  }
+  /* Меню пока скрыто */
+  #nav-menu {
+    display: none !important;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+  }
+  /* Открытое меню */
+  #nav-menu.active {
+    display: block !important;
+  }
+}
