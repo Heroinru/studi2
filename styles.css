@@ -1824,9 +1824,13 @@ body {
 /* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
   .header-content {
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 0 !important;
   }
+}
+
   
   .logo-image {
     height: 40px;
