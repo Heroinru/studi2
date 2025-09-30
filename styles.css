@@ -1896,3 +1896,46 @@ body {
   }
 }
 
+/* Телефон: шапка в ряд (логотип слева, бургер справа) */
+@media (max-width: 768px) {
+  .header .container {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+  .logo-container { order: 1; }
+  .burger-btn    { order: 2; display: flex !important; }
+  .logo          { display: none !important; }
+  #nav-menu      { display: none !important; }
+  #nav-menu.active { display: block !important; }
+}
+
+/* Планшет портрет: повторяем то же поведение, что и для телефонов */
+@media (max-width: 1024px) and (orientation: portrait) {
+  .header .container {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+  .logo-container { order: 1; }
+  .burger-btn    { order: 2; display: flex !important; }
+  .logo          { display: none !important; }
+  #nav-menu      { display: none !important; }
+  #nav-menu.active { display: block !important; }
+}
+
+/* Планшет ландшафт: как на ПК */
+@media (max-width: 1024px) and (orientation: landscape) {
+  .header .container {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+  .burger-btn    { display: none !important; }
+  .logo          { display: block !important; }
+  .nav ul        { display: flex !important; }
+  #nav-menu      { display: block !important; position: static; }
+}
