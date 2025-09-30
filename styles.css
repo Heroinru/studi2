@@ -72,6 +72,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    flex-direction: row !important;
 }
 /* Хедер */
 .header {
@@ -81,6 +82,7 @@ body {
     width: 100%;
     top: 0;
     z-index: 1000;
+    flex-direction: row !important;
 }
 .header .container {
     display: flex;
