@@ -1856,35 +1856,40 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 769px) {
+  /* Делаем контейнер хедера флексом */
   .header .container {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    padding: 15px 20px !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
-  /* Логотип слева */
-  .logo-container {
-    order: 1;
-  }
-  /* Бургер справа */
-  .burger-btn {
-    order: 2;
-  }
-  /* Скрываем название на мобильных */
-  .logo {
-    display: none !important;
-  }
-  /* Меню пока скрыто */
+
+  /* Навигация растягивается между логотипом и краем */
   #nav-menu {
-    display: none !important;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    right: 0;
+    display: flex !important;
+    flex-grow: 1 !important;
+    margin-left: 20px !important;
   }
-  /* Открытое меню */
-  #nav-menu.active {
-    display: block !important;
+
+  /* Список ul делаем grid на 8 колонок */
+  #nav-menu ul {
+    display: grid !important;
+    grid-template-columns: repeat(8, 1fr) !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    gap: 0 !important;
+  }
+
+  /* Ссылки по центру своих ячеек */
+  #nav-menu ul li {
+    text-align: center;
+  }
+
+  #nav-menu ul li a {
+    display: inline-block;
+    padding: 15px 0;
+    width: 100%;
   }
 }
