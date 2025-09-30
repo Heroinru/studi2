@@ -1939,3 +1939,35 @@ body {
   .nav ul        { display: flex !important; }
   #nav-menu      { display: block !important; position: static; }
 }
+
+@media (min-width: 769px) {
+  /* Шапка — флекс */
+  .header .container {
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  /* Навигация растягивается */
+  #nav-menu {
+    display: flex !important;
+    flex-grow: 1 !important;
+    margin-left: 20px !important;
+  }
+
+  /* Список пунктов растягивается на всю ширину между логотипом и краем */
+  #nav-menu ul {
+    display: flex !important;
+    width: 100% !important;
+    justify-content: space-between !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+
+  /* Ссылки в пунктах */
+  #nav-menu ul li a {
+    display: block !important;
+    padding: 15px 0 !important;
+    text-align: center !important;
+  }
+}
