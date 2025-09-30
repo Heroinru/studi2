@@ -353,27 +353,33 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+// В конец вашего существующего script.js добавьте этот код для мобильного меню
+
 document.addEventListener('DOMContentLoaded', () => {
-  const burger = document.getElementById('burger-btn');
-  const nav = document.getElementById('nav-menu');
-  if (burger && nav) {
-    burger.addEventListener('click', () => {
-      nav.classList.toggle('active');
-      burger.classList.toggle('active');
+  const burgerBtn = document.getElementById('burger-btn');
+  const navMenu = document.getElementById('nav-menu');
+  if (!burgerBtn || !navMenu) return;
+
+  // Открыть/закрыть меню
+  burgerBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    navMenu.classList.toggle('active');
+    burgerBtn.classList.toggle('active');
+  });
+
+  // Закрыть меню при клике на пункт
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('active');
+      burgerBtn.classList.remove('active');
     });
-    // Закрываем меню при клике по пункту
-    nav.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        nav.classList.remove('active');
-        burger.classList.remove('active');
-      });
-    });
-    // Закрываем при клике вне меню
-    document.addEventListener('click', e => {
-      if (!nav.contains(e.target) && !burger.contains(e.target)) {
-        nav.classList.remove('active');
-        burger.classList.remove('active');
-      }
-    });
-  }
+  });
+
+  // Закрыть при клике вне меню
+  document.addEventListener('click', (e) => {
+    if (!navMenu.contains(e.target) && e.target !== burgerBtn) {
+      navMenu.classList.remove('active');
+      burgerBtn.classList.remove('active');
+    }
+  });
 });
