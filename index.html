@@ -13,17 +13,28 @@
 <header class="header">
   <div class="container">
     <div class="header-content">
-      <!-- Добавляем логотип -->
+      <!-- Логотип слева -->
       <div class="logo-container">
-        <img src="IMG/logotip.jpg" alt="Изостудия Логотип" class="logo-image">
+        <a href="#home">
+          <img src="IMG/logotip.jpg" alt="Изостудия Логотип" class="logo-image">
+        </a>
       </div>
-      
-      <!-- Блок с названием и описанием -->
+
+      <!-- Бургер-кнопка (мобильный вид) -->
+      <button id="burger-btn" class="burger-btn" aria-label="Открыть меню">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+
+      <!-- Название студии (скрывается на мобильных) -->
       <div class="logo">
-        <h1></h1>
-        <p></p>
+        <h1>Детская Изостудия</h1>
+        <p>Творческое развитие детей</p>
       </div>
-      <nav class="nav">
+
+      <!-- Навигация -->
+      <nav id="nav-menu" class="nav">
         <ul>
           <li><a href="#home">Главная</a></li>
           <li><a href="#about">О нас</a></li>
@@ -36,7 +47,9 @@
         </ul>
       </nav>
     </div>
-  </header>
+  </div>
+</header>
+
 
   <!-- Главная секция -->
   <section id="home" class="hero">
