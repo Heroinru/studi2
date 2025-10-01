@@ -1952,36 +1952,40 @@ body {
 }
 
 @media (min-width: 769px) {
-  /* Шапка в строку */
-  .header .container {
-    display: flex;
-    align-items: center;
+  /* Делаем header-content флексом в строку */
+  .header-content {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
   }
 
   /* Навигация растягивается */
   #nav-menu {
-    display: flex;
-    flex-grow: 1;
-    margin-left: 20px;
+    display: flex !important;
+    flex-grow: 1 !important;
+    margin-left: 20px !important;
   }
 
-  /* Пункты меню в ряд равномерно */
+  /* Список ul становится флексом в строку */
   #nav-menu ul {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    display: flex !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
   }
 
-  /* Каждый пункт занимает равную долю */
+  /* Каждый пункт занимает равную часть */
   #nav-menu ul li {
-    flex: 1;
-    text-align: center;
+    flex: 1 !important;
+    text-align: center !important;
+    margin: 0 !important;
   }
+
   #nav-menu ul li a {
-    display: block;
-    padding: 15px 0;
+    display: block !important;
+    padding: 15px 0 !important;
   }
 }
