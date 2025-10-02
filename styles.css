@@ -2962,6 +2962,7 @@ body {
   /* При активном бургере показываем меню */
   .burger-btn.active + .nav {
     right: 0 !important;
+    width: 40% !important;
   }
 
   /* Пункты меню */
