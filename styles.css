@@ -2595,6 +2595,7 @@ body {
     max-width: 100%;          /* растягиваем на всю ширину */
   }
   .nav ul {
+    display: flex;
     width: 100%;              /* пункты на 100% */
     justify-content: space-between;
     gap: 8px;                 /* небольшой зазор */
@@ -2604,12 +2605,10 @@ body {
     min-width: 0;             /* позволяем сжиматься */
   }
   .nav ul li a {
-    font-size: 1em !important;  /* увеличенный шрифт */
-    padding: 8px 6px;             /* подогнанные отступы */
-    text-align: center;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+  white-space: nowrap;          /* текст в одну строку */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
   .logo {
     margin: 0 10px;
   }
