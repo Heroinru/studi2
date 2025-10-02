@@ -2982,3 +2982,20 @@ body {
     border-bottom: none;
   }
 }
+/* Убираем серую полосу и подписи в Галерее на мобилах */
+@media (max-width: 768px) {
+  /* Скрываем саму наложку */
+  .gallery-overlay {
+    display: none !important;
+  }
+  /* Или, если нужно убрать только фон, но оставить интерактивность */
+  .gallery-overlay {
+    background: none !important;
+    padding: 0 !important;
+  }
+  /* Скрываем подписи внутри */
+  .gallery-overlay .caption,
+  .gallery-item figcaption {
+    display: none !important;
+  }
+}
