@@ -2809,3 +2809,39 @@ body {
     display: none !important;
   }
 }
+/* iPad портрет: принудительно показываем все пункты в одну строку */
+@media (min-width: 768px) and (max-width: 820px) and (orientation: portrait) {
+  .container {
+    padding: 0 !important;
+  }
+  .nav {
+    flex-grow: 1 !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+  }
+  .nav ul {
+    display: flex !important;
+    flex-wrap: nowrap !important;           
+    width: 100% !important;
+    justify-content: space-evenly !important; 
+    gap: 2px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .nav ul li {
+    flex: 1 1 0 !important;                  /* максимально ужимаем */
+    min-width: 0 !important;
+  }
+  .nav ul li a {
+    font-size: 1em !important;               /* чуть поменьше шрифт */
+    padding: 6px 2px !important;              /* минимальные отступы */
+    white-space: nowrap !important;           
+    overflow: hidden !important;              
+    text-overflow: ellipsis !important;       
+    text-align: center !important;
+    display: block !important;
+  }
+  .burger-btn {
+    display: none !important;
+  }
+}
