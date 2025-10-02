@@ -2933,14 +2933,19 @@ body {
     border-bottom: none !important;
   }
 }
-/* Бургер-меню справа на iPad портрет */
-@media (min-width: 769px) and (max-width: 820px) and (orientation: portrait) {
+/* Бургер-меню справа на iPad портрет (768px) */
+@media (min-width: 768px) and (max-width: 820px) and (orientation: portrait) {
   /* Показываем бургер */
   .burger-btn {
     display: flex !important;
   }
 
-  /* Скрываем навигацию за экраном справа */
+  /* Прячем стандартное меню */
+  .nav ul {
+    display: none !important;
+  }
+
+  /* Готовим выпадающее меню */
   .nav {
     position: fixed;
     top: 0;
@@ -2954,20 +2959,17 @@ body {
     z-index: 1000;
   }
 
-  /* Скрываем внутренний список до открытия */
+  /* При активном бургере показываем меню */
+  .burger-btn.active + .nav {
+    right: 0 !important;
+  }
+
+  /* Пункты меню */
   .nav ul {
-    display: flex;
     flex-direction: column;
     padding: 20px;
     gap: 0;
   }
-
-  /* Открываем меню при active */
-  .burger-btn.active + .nav {
-    right: 0;
-  }
-
-  /* Пункты меню */
   .nav ul li a {
     padding: 15px 20px;
     border-bottom: 1px solid #eee;
