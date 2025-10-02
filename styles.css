@@ -2845,3 +2845,34 @@ body {
     display: none !important;
   }
 }
+/* Для планшетов в портретной ориентации — показываем бургер-меню */
+@media (min-width: 769px) and (max-width: 820px) and (orientation: portrait) {
+  /* Скрываем обычное меню */
+  .nav ul {
+    display: none !important;
+  }
+  /* Показываем бургер-кнопку */
+  .burger-btn {
+    display: flex !important;
+  }
+  /* При активном бургер-меню показываем список */
+  .burger-btn.active + .nav ul,
+  .nav ul.active {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    background: #fff !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;
+  }
+  .nav ul li a {
+    padding: 15px !important;
+    border-bottom: 1px solid #eee !important;
+    text-align: center !important;
+  }
+  .nav ul li:last-child a {
+    border-bottom: none !important;
+  }
+}
