@@ -2655,3 +2655,40 @@ body {
     text-overflow: ellipsis !important;
   }
 }
+/* Исправление меню для планшетов в портретной ориентации */
+@media (min-width: 601px) and (max-width: 768px) and (orientation: portrait) {
+  /* Убираем паддинги контейнера, чтобы было больше места */
+  .container {
+    padding: 0;
+  }
+
+  /* Навигация на всю ширину */
+  .nav {
+    display: flex !important;
+    flex-grow: 1 !important;
+    max-width: 100% !important;
+  }
+
+  /* Список пунктов: перенос на несколько строк */
+  .nav ul {
+    display: flex !important;
+    flex-wrap: wrap !important;          /* разрешаем перенос */
+    width: 100% !important;
+    gap: 5px !important;
+    justify-content: center !important;  /* или space-between */
+  }
+
+  /* Каждый пункт в несколько строк */
+  .nav ul li {
+    flex: 1 1 45% !important;             /* два пункта в ряд */
+    min-width: 0 !important;
+  }
+
+  /* Стиль ссылок */
+  .nav ul li a {
+    font-size: 1.1em !important;
+    padding: 10px 6px !important;
+    text-align: center !important;
+    white-space: normal !important;       /* позволяем переносить текст */
+  }
+}
