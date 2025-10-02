@@ -2933,50 +2933,48 @@ body {
     border-bottom: none !important;
   }
 }
-/* Мобильное меню выезжающее справа для устройств до 820px */
-@media (max-width: 820px) {
+/* Бургер-меню справа на iPad портрет */
+@media (min-width: 769px) and (max-width: 820px) and (orientation: portrait) {
   /* Показываем бургер */
   .burger-btn {
     display: flex !important;
   }
 
-  /* Подготовка меню к выезжанию */
+  /* Скрываем навигацию за экраном справа */
   .nav {
-    position: fixed !important;
-    top: 0 !important;
-    right: -100% !important;      /* прячем за экраном справа */
-    width: 80% !important;         /* ширина выпадающего меню */
-    height: 100% !important;       /* на всю высоту экрана */
-    background: #fff !important;
-    box-shadow: -2px 0 8px rgba(0,0,0,0.2) !important;
-    display: flex !important;
-    flex-direction: column !important;
-    transition: right 0.3s ease !important;
-    z-index: 10000 !important;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    height: 100%;
+    background: #fff;
+    box-shadow: -3px 0 10px rgba(0,0,0,0.2);
+    overflow-y: auto;
+    transition: right 0.25s ease-in-out;
+    z-index: 1000;
   }
 
-  /* Обычный список прячем */
+  /* Скрываем внутренний список до открытия */
   .nav ul {
-    display: flex !important;
-    flex-direction: column !important;
-    padding: 20px !important;
-    gap: 0 !important;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 0;
   }
 
-  /* Показываем меню при активном бургере */
-  .burger-btn.active + .nav,
-  .nav.active {
-    right: 0 !important;           /* выезжаем на экран */
+  /* Открываем меню при active */
+  .burger-btn.active + .nav {
+    right: 0;
   }
 
   /* Пункты меню */
   .nav ul li a {
-    padding: 15px 20px !important;
-    border-bottom: 1px solid #eee !important;
-    text-align: left !important;
-    font-size: 1em !important;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    font-size: 1em;
   }
   .nav ul li:last-child a {
-    border-bottom: none !important;
+    border-bottom: none;
   }
 }
