@@ -2575,32 +2575,14 @@ body {
         transform: translateY(0);
     }
 }
-/* Принудительно растягиваем меню на планшетах */
+/* Упрощенное решение для планшетов */
 @media (min-width: 769px) and (max-width: 1024px) {
-  .header-content {
-    justify-content: space-between;  /* Равномерное распределение */
-  }
-  
-  .nav {
-    flex-grow: 1;
-    max-width: 60%;                  /* Ограничиваем ширину меню */
+  .nav ul li a {
+    font-size: 0.7em !important;
+    padding: 5px 3px !important;
   }
   
   .nav ul {
-    width: 100%;
-    justify-content: space-between;  /* Растягиваем пункты равномерно */
-  }
-  
-  .nav ul li {
-    flex: 1;                         /* Каждый пункт занимает равную ширину */
-    min-width: 0;                    /* Позволяем сжиматься */
-  }
-  
-  .nav ul li a {
-    font-size: 0.75em;               /* Меньше шрифт */
-    padding: 6px 4px;                /* Меньше отступы */
-    text-align: center;              /* По центру */
-    overflow: hidden;                /* Скрываем переполнение */
-    text-overflow: ellipsis;         /* Многоточие если не помещается */
+    gap: 3px !important;
   }
 }
