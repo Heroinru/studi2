@@ -2575,43 +2575,32 @@ body {
         transform: translateY(0);
     }
 }
-/* Адаптив для планшетов - меню растягивается на всю ширину */
+/* Принудительно растягиваем меню на планшетах */
 @media (min-width: 769px) and (max-width: 1024px) {
-  .nav ul li a {
-    font-size: 0.8em;        /* Уменьшаем размер шрифта */
-    padding: 8px 8px;        /* Уменьшаем отступы */
-    white-space: nowrap;     /* Не переносим текст */
-  }
-  
-  .nav ul {
-    gap: 8px;                /* Уменьшаем расстояние между пунктами */
+  .header-content {
+    justify-content: space-between;  /* Равномерное распределение */
   }
   
   .nav {
-    margin-left: 10px;       /* Уменьшаем отступ от логотипа */
-  }
-}
-
-/* Для очень маленьких планшетов */
-@media (min-width: 769px) and (max-width: 900px) {
-  .nav ul li a {
-    font-size: 0.7em;        /* Еще меньше шрифт */
-    padding: 6px 6px;        /* Еще меньше отступы */
+    flex-grow: 1;
+    max-width: 60%;                  /* Ограничиваем ширину меню */
   }
   
   .nav ul {
-    gap: 5px;                /* Минимальный зазор */
+    width: 100%;
+    justify-content: space-between;  /* Растягиваем пункты равномерно */
   }
   
-  .logo {
-    margin: 0 10px;          /* Уменьшаем отступы у названия студии */
+  .nav ul li {
+    flex: 1;                         /* Каждый пункт занимает равную ширину */
+    min-width: 0;                    /* Позволяем сжиматься */
   }
   
-  .logo h1 {
-    font-size: 1.2em;        /* Уменьшаем название студии */
-  }
-  
-  .logo p {
-    font-size: 0.8em;        /* Уменьшаем подпись */
+  .nav ul li a {
+    font-size: 0.75em;               /* Меньше шрифт */
+    padding: 6px 4px;                /* Меньше отступы */
+    text-align: center;              /* По центру */
+    overflow: hidden;                /* Скрываем переполнение */
+    text-overflow: ellipsis;         /* Многоточие если не помещается */
   }
 }
