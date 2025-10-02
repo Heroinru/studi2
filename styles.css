@@ -2776,3 +2776,36 @@ body {
     display: none !important;
   }
 }
+/* Меню в одну строку на iPad портрет */
+@media (min-width: 768px) and (max-width: 820px) and (orientation: portrait) {
+  .container {
+    padding: 0 !important;
+  }
+  .nav {
+    flex-grow: 1 !important;
+    max-width: 100% !important;
+  }
+  .nav ul {
+    display: flex !important;
+    flex-wrap: nowrap !important;          /* Запрещаем перенос */
+    width: 100% !important;
+    justify-content: space-between !important; /* Равномерное распределение */
+    overflow-x: hidden !important;
+    gap: 5px !important;
+  }
+  .nav ul li {
+    flex: 1 1 auto !important;            /* Каждый пункт равной ширины */
+    min-width: 0 !important;
+  }
+  .nav ul li a {
+    font-size: 1.1em !important;          /* Размер шрифта */
+    padding: 8px 4px !important;          /* Отступы */
+    text-align: center !important;
+    white-space: nowrap !important;       /* Без переноса */
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+  .burger-btn {
+    display: none !important;
+  }
+}
