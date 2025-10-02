@@ -2622,3 +2622,36 @@ body {
     text-align: center;
   }
 }
+/* Специально для планшетов в ландшафте (например, iPad 1024px) */
+@media (min-width: 769px) and (max-width: 1366px) and (orientation: landscape) {
+  /* Убираем внутренние отступы контейнера */
+  .container {
+    padding: 0;  
+  }
+  
+  /* Растягиваем навигацию */
+  .nav {
+    flex-grow: 1 !important;
+    max-width: 100% !important;
+  }
+
+  /* Список меню во всю ширину */
+  .nav ul {
+    display: flex !important;
+    width: 100% !important;
+    justify-content: space-between !important;
+    gap: 10px !important;
+  }
+  .nav ul li {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+  }
+  .nav ul li a {
+    font-size: 1.2em !important;
+    padding: 10px 8px !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+}
