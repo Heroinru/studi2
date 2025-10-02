@@ -2735,3 +2735,13 @@ body {
     display: none !important;
   }
 }
+/* Радикальное решение для iPad портрет */
+@media (min-width: 768px) and (max-width: 820px) {
+  .nav ul li a {
+    font-size: 0.8em !important;
+    padding: 6px 2px !important;
+  }
+  .nav ul {
+    gap: 2px !important;
+  }
+}
