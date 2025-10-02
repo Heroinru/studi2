@@ -2575,3 +2575,43 @@ body {
         transform: translateY(0);
     }
 }
+/* Адаптив для планшетов - меню растягивается на всю ширину */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .nav ul li a {
+    font-size: 0.8em;        /* Уменьшаем размер шрифта */
+    padding: 8px 8px;        /* Уменьшаем отступы */
+    white-space: nowrap;     /* Не переносим текст */
+  }
+  
+  .nav ul {
+    gap: 8px;                /* Уменьшаем расстояние между пунктами */
+  }
+  
+  .nav {
+    margin-left: 10px;       /* Уменьшаем отступ от логотипа */
+  }
+}
+
+/* Для очень маленьких планшетов */
+@media (min-width: 769px) and (max-width: 900px) {
+  .nav ul li a {
+    font-size: 0.7em;        /* Еще меньше шрифт */
+    padding: 6px 6px;        /* Еще меньше отступы */
+  }
+  
+  .nav ul {
+    gap: 5px;                /* Минимальный зазор */
+  }
+  
+  .logo {
+    margin: 0 10px;          /* Уменьшаем отступы у названия студии */
+  }
+  
+  .logo h1 {
+    font-size: 1.2em;        /* Уменьшаем название студии */
+  }
+  
+  .logo p {
+    font-size: 0.8em;        /* Уменьшаем подпись */
+  }
+}
