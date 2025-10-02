@@ -2589,7 +2589,7 @@ body {
 /* Корректировка меню на планшетах и мобильных - вставить в конец styles.css */
 
 /* Для планшетов (горизонталь и вертикаль) */
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 769px) {
   .nav {
     flex-grow: 1;
     max-width: 100%;          /* растягиваем на всю ширину */
