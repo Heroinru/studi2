@@ -2999,3 +2999,20 @@ body {
     display: none !important;
   }
 }
+/* Убираем серую полосу и подписи в Галерее на мобильных и планшетах */
+@media (max-width: 1024px) {
+  /* Скрываем само оверлейное полотно */
+  .gallery-overlay {
+    display: none !important;
+  }
+  /* Если нужен клик по картинке без видимого фона */
+  .gallery-overlay {
+    background: none !important;
+    padding: 0 !important;
+  }
+  /* Убираем текстовые подписи */
+  .gallery-overlay .caption,
+  .gallery-item figcaption {
+    display: none !important;
+  }
+}
