@@ -2592,7 +2592,7 @@ body {
   
   .nav {
     flex-grow: 1;
-    max-width: 60%;
+    max-width: 100%;
   }
   
   .logo {
