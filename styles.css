@@ -2586,3 +2586,59 @@ body {
     gap: 3px !important;
   }
 }
+/* Корректировка меню на планшетах и мобильных - вставить в конец styles.css */
+
+/* Для планшетов (горизонталь и вертикаль) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .nav {
+    flex-grow: 1;
+    max-width: 100%;          /* растягиваем на всю ширину */
+  }
+  .nav ul {
+    width: 100%;              /* пункты на 100% */
+    justify-content: space-between;
+    gap: 8px;                 /* небольшой зазор */
+  }
+  .nav ul li {
+    flex: 1;                  /* равномерное распределение */
+    min-width: 0;             /* позволяем сжиматься */
+  }
+  .nav ul li a {
+    font-size: 1.2em !important;  /* увеличенный шрифт */
+    padding: 8px 6px;             /* подогнанные отступы */
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .logo {
+    margin: 0 10px;
+  }
+  .logo h1 {
+    font-size: 1.2em;
+  }
+  .logo p {
+    font-size: 0.8em;
+  }
+}
+
+/* Для мобильных и узких планшетов */
+@media (max-width: 768px) {
+  .nav.active {
+    display: block;
+    width: 100%;                /* обязательно растянуть */
+  }
+  .nav ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 10px 0;
+  }
+  .nav ul li a {
+    font-size: 1.2em !important;  /* увеличенный шрифт */
+    padding: 15px 10px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+  }
+  .nav ul li:last-child a {
+    border-bottom: none;
+  }
+}
