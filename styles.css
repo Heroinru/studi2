@@ -2576,54 +2576,26 @@ body {
     }
 }
 
-/* Исправление меню для планшетов - добавить в конец файла */
 @media (min-width: 769px) and (max-width: 1024px) {
+  .nav {
+    flex-grow: 1;
+    max-width: 100%;    /* теперь меню займёт 100% */
+  }
+  .nav ul {
+    display: flex;
+    width: 100%;        /* растянуть список по всей ширине */
+    justify-content: space-between; /* или space-evenly */
+    gap: 8px;
+  }
+  .nav ul li {
+    flex: 1;            /* равномерно распределить пункты */
+    min-width: 0;       /* дать право ужаться */
+  }
   .nav ul li a {
-    font-size: 0.75em;
-    padding: 6px 4px;
+    font-size: 1.2em;   /* ваш желаемый размер */
+    padding: 8px 6px;
     text-align: center;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-  
-  .nav ul {
-    gap: 5px;
-  }
-  
-  .nav {
-    flex-grow: 1;
-    max-width: 100%;
-  }
-  
-  .logo {
-    margin: 0 10px;
-  }
-  
-  .logo h1 {
-    font-size: 1.2em;
-  }
-  
-  .logo p {
-    font-size: 0.8em;
-  }
-}
-
-/* Для очень маленьких планшетов */
-@media (min-width: 769px) and (max-width: 900px) {
-  .nav ul li a {
-    font-size: 0.65em;
-    padding: 5px 3px;
-  }
-  
-  .nav ul {
-    gap: 3px;
-  }
-  
-  .logo h1 {
-    font-size: 1.1em;
-  }
-  
-  .logo p {
-    font-size: 0.7em;
   }
 }
