@@ -885,6 +885,9 @@ body {
 
 /* Планшеты в горизонтальной ориентации и большие экраны: как на ПК */
 @media (min-width: 769px) {
+  .nav ul li a {
+    font-size: 1.3rem; /* было 0.9rem — увеличьте по вкусу, например 1.1rem */
+  }
     .header-content {
         justify-content: flex-start;
     }
