@@ -2604,7 +2604,7 @@ body {
     min-width: 0;             /* позволяем сжиматься */
   }
   .nav ul li a {
-    font-size: 1.2em !important;  /* увеличенный шрифт */
+    font-size: 1em !important;  /* увеличенный шрифт */
     padding: 8px 6px;             /* подогнанные отступы */
     text-align: center;
     overflow: hidden;
@@ -2640,23 +2640,5 @@ body {
   }
   .nav ul li:last-child a {
     border-bottom: none;
-  }
-}
-/* Дополнительно для планшетов: разрешаем перенос и растягиваем меню */
-@media (min-width: 769px) and (max-width: 1024px) {
-  /* Разрешаем перенос пунктов */
-  .nav ul {
-    flex-wrap: wrap;
-    width: 100%;
-  }
-  /* Каждый пункт займёт минимум 25% ширины, но сможет уменьшаться */
-  .nav ul li {
-    flex: 1 1 25%;
-    min-width: 120px;  /* можно уменьшить по вкусу */
-  }
-  /* Подгоняем отступы и размер шрифта */
-  .nav ul li a {
-    font-size: 1.2em;
-    padding: 10px 8px;
   }
 }
