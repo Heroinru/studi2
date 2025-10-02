@@ -2632,7 +2632,7 @@ body {
     padding: 10px 0;
   }
   .nav ul li a {
-    font-size: 1.2em !important;  /* увеличенный шрифт */
+    font-size: 1.2em ;  /* увеличенный шрифт */
     padding: 15px 10px;
     border-bottom: 1px solid #eee;
     text-align: center;
