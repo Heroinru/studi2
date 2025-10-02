@@ -2870,7 +2870,7 @@ body {
     display: none !important;
     position: absolute !important;
     top: 100% !important;
-    left: 0 !important;
+    
     right: 0 !important;
     background: white !important;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;
