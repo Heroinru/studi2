@@ -1132,7 +1132,7 @@ body {
     content: '✓';
     position: absolute;
     left: 0;
-    color: var(--color-primary);
+    color: #ff6b6b;
     font-weight: var(--font-weight-bold);
 }
 .btn-program {
@@ -1968,7 +1968,7 @@ body {
   border-radius: var(--radius-sm);
   cursor: pointer;
   transition: background-color var(--duration-normal) var(--ease-standard);
-  color: var(--color-text);
+  color: #ff6b6b;
   font-family: var(--font-family-base);
 }
 
