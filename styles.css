@@ -2735,13 +2735,44 @@ body {
     display: none !important;
   }
 }
-/* Радикальное решение для iPad портрет */
+/* Исправленное решение для iPad в портретной ориентации */
 @media (min-width: 768px) and (max-width: 820px) {
-  .nav ul li a {
-    font-size: 0.8em !important;
-    padding: 6px 2px !important;
+  /* Убираем боковые отступы контейнера */
+  .container {
+    padding: 0 !important;
   }
+  
+  /* Навигация на всю ширину */
+  .nav {
+    width: 100% !important;
+    flex-grow: 1 !important;
+  }
+  
+  /* Список на всю ширину с переносом в два ряда */
   .nav ul {
-    gap: 2px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+    justify-content: space-between !important;  /* растягиваем по всей ширине */
+    gap: 10px !important;
+  }
+  
+  /* Каждый пункт занимает примерно половину ширины */
+  .nav ul li {
+    flex: 1 1 45% !important;  /* 45% ширины каждый */
+    min-width: 0 !important;
+  }
+  
+  .nav ul li a {
+    font-size: 1.1em !important;
+    padding: 10px 8px !important;
+    text-align: center !important;
+    width: 100% !important;
+    display: block !important;
+  }
+  
+  /* Скрываем бургер */
+  .burger-btn {
+    display: none !important;
   }
 }
