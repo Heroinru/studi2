@@ -2599,3 +2599,26 @@ body {
     text-overflow: ellipsis;
   }
 }
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    padding: 0;        /* убираем боковые отступы */
+  }
+  .nav {
+    flex-grow: 1;
+    max-width: 100%;   /* растягиваем на всю ширину */
+  }
+  .nav ul {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .nav ul li {
+    flex: 1;
+    min-width: 0;
+  }
+  .nav ul li a {
+    font-size: 1.2em;
+    padding: 8px 6px;
+    text-align: center;
+  }
+}
