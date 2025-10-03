@@ -3011,7 +3011,7 @@ h4,
 }
 
 /* Для планшетов в портретной ориентации — показываем бургер-меню */
-@media (min-width: 769px) and (max-width: 820px) and (orientation: portrait) {
+@media (min-width: 768px) and (max-width: 820px) and (orientation: portrait) {
   /* Скрываем обычное меню */
   .nav ul {
     display: none !important;
