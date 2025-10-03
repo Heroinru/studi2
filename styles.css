@@ -1182,7 +1182,7 @@ body {
 
 /* КНОПКИ ПРОГРАММ */
 .btn-program {
-    background: var(--color-charcoal-700); /* ИСПРАВЛЕНО: цвет футера */
+    background: var(--color-tretyakov-brown); /* ИЗМЕНЕНО: коричневый цвет Третьяковки */
     color: var(--color-white);
     border: none;
     padding: var(--space-12) var(--space-24);
@@ -1193,10 +1193,9 @@ body {
     font-weight: var(--font-weight-medium);
 }
 .btn-program:hover {
-    background: var(--color-charcoal-800); /* Более темный при hover */
+    background: var(--color-tretyakov-dark-brown); /* Более темный коричневый при hover */
     transform: translateY(-2px);
 }
-
 
 /* О нас */
 #about {
@@ -1214,6 +1213,13 @@ body {
     margin: 0 auto;
 }
 
+/* ИСПРАВЛЕНО: Добавлены отступы для iPad вертикально в секции О НАС */
+@media (min-width: 768px) and (max-width: 820px) and (orientation: portrait) {
+  #about .container {
+    padding: var(--space-32) var(--space-32) !important; /* такие же отступы как в программах */
+    margin: 0 var(--space-20) !important;
+  }
+}
 
 
 @media (max-width: 768px) {
@@ -2817,39 +2823,16 @@ h4,
   .nav ul li {
     flex: 1 1 auto !important;
     min-width: 0 !important;
-  }@media (min-width: 769px) and (max-width: 1366px) and (orientation: landscape) {
-  /* ИСПРАВЛЕНО: оптимизация для горизонтальной ориентации iPad */
-  .container {
-    padding: 0 10px !important; /* минимальные отступы */
   }
-  
-  .nav {
-    flex-grow: 1 !important;
-    max-width: 100% !important;
-  }
-
-  .nav ul {
-    display: flex !important;
-    width: 100% !important;
-    justify-content: space-between !important;
-    gap: 4px !important; /* минимальный зазор */
-  }
-  
-  .nav ul li {
-    flex: 1 1 auto !important;
-    min-width: 0 !important;
-  }
-  
   .nav ul li a {
-    font-size: 0.75rem !important; /* ИСПРАВЛЕНО: еще меньше */
-    padding: 6px 3px !important; /* ИСПРАВЛЕНО: минимальные отступы */
+    font-size: 1em !important;
+    padding: 6px 3px !important;
     text-align: center !important;
     white-space: nowrap !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
   }
 }
-
 
 /* Исправление меню для планшетов в портретной ориентации */
 @media (min-width: 601px) and (max-width: 768px) and (orientation: portrait) {
@@ -3143,7 +3126,7 @@ h4,
     background: #fff !important;
     position: absolute !important;
     top: 100% !important;
-    right: 0 !important;
+    left: 0 !important;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;
   }
 
@@ -3158,7 +3141,14 @@ h4,
   }
 }
 
+/* Бургер-меню справа на iPad портрет */
 @media (min-width: 768px) and (max-width: 820px) and (orientation: portrait) {
+  /* Показываем бургер */
+  .burger-btn {
+    display: flex !important;
+  }
+
+  /* Скрываем навигацию за экраном справа */
   .nav {
     position: fixed;
     top: 0;
@@ -3172,13 +3162,32 @@ h4,
     z-index: 1000;
   }
 
+  /* Скрываем внутренний список до открытия */
+  .nav ul {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 0;
+  }
+
+  /* Открываем меню при active */
   .burger-btn.active + .nav {
     right: 0;
     width: 40% !important;
   }
+
+  /* Пункты меню */
+  .nav ul li a {
+    overflow: visible !important;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    font-size: 1em;
+  }
+  .nav ul li:last-child a {
+    border-bottom: none;
+  }
 }
-
-
 
 /* Убираем серую полосу и подписи в Галерее на мобилах */
 @media (max-width: 768px) {
@@ -3215,24 +3224,5 @@ h4,
     display: none !important;
   }
 }
-
-/* Убираем серую полосу и подписи в Галерее на мобильных и планшетах */
-@media (max-width: 1024px) {
-  /* Скрываем само оверлейное полотно */
-  .gallery-overlay {
-    display: none !important;
-  }
-  /* Если нужен клик по картинке без видимого фона */
-  .gallery-overlay {
-    background: none !important;
-    padding: 0 !important;
-  }
-  /* Убираем текстовые подписи */
-  .gallery-overlay .caption,
-  .gallery-item figcaption {
-    display: none !important;
-  }
-}
-
 
 /* =================== КОНЕЦ СТИЛЕЙ ТРЕТЬЯКОВСКОЙ ГАЛЕРЕИ =================== */
