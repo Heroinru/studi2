@@ -928,7 +928,7 @@ body {
 /* Планшеты в горизонтальной ориентации и большие экраны: как на ПК */
 @media (min-width: 769px) {
   .nav ul li a {
-    font-size: 1.3rem; /* было 0.9rem — увеличьте по вкусу, например 1.1rem */
+    font-size: 1.1rem; /* было 0.9rem — увеличьте по вкусу, например 1.1rem */
   }
     .header-content {
         justify-content: flex-start;
@@ -1182,7 +1182,7 @@ body {
 
 /* КНОПКИ ПРОГРАММ */
 .btn-program {
-    background: var(--color-tretyakov-brown); /* ИЗМЕНЕНО: коричневый цвет Третьяковки */
+    background: var(--color-charcoal-700); /* ИСПРАВЛЕНО: цвет футера */
     color: var(--color-white);
     border: none;
     padding: var(--space-12) var(--space-24);
@@ -1193,9 +1193,10 @@ body {
     font-weight: var(--font-weight-medium);
 }
 .btn-program:hover {
-    background: var(--color-tretyakov-dark-brown); /* Более темный коричневый при hover */
+    background: var(--color-charcoal-800); /* Более темный при hover */
     transform: translateY(-2px);
 }
+
 
 /* О нас */
 #about {
@@ -1212,6 +1213,8 @@ body {
     max-width: var(--container-xl);
     margin: 0 auto;
 }
+
+
 
 @media (max-width: 768px) {
   #about .container {
@@ -2814,16 +2817,39 @@ h4,
   .nav ul li {
     flex: 1 1 auto !important;
     min-width: 0 !important;
+  }@media (min-width: 769px) and (max-width: 1366px) and (orientation: landscape) {
+  /* ИСПРАВЛЕНО: оптимизация для горизонтальной ориентации iPad */
+  .container {
+    padding: 0 10px !important; /* минимальные отступы */
   }
+  
+  .nav {
+    flex-grow: 1 !important;
+    max-width: 100% !important;
+  }
+
+  .nav ul {
+    display: flex !important;
+    width: 100% !important;
+    justify-content: space-between !important;
+    gap: 4px !important; /* минимальный зазор */
+  }
+  
+  .nav ul li {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+  }
+  
   .nav ul li a {
-    font-size: 1.2em !important;
-    padding: 10px 8px !important;
+    font-size: 0.75rem !important; /* ИСПРАВЛЕНО: еще меньше */
+    padding: 6px 3px !important; /* ИСПРАВЛЕНО: минимальные отступы */
     text-align: center !important;
     white-space: nowrap !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
   }
 }
+
 
 /* Исправление меню для планшетов в портретной ориентации */
 @media (min-width: 601px) and (max-width: 768px) and (orientation: portrait) {
@@ -3132,53 +3158,53 @@ h4,
   }
 }
 
-/* Бургер-меню справа на iPad портрет */
 @media (min-width: 768px) and (max-width: 820px) and (orientation: portrait) {
-  /* Показываем бургер */
+  /* ИСПРАВЛЕНО: бургер-меню появляется СПРАВА */
   .burger-btn {
     display: flex !important;
   }
 
-  /* Скрываем навигацию за экраном справа */
   .nav {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 40%;
-    height: 100%;
-    background: #fff;
-    box-shadow: -3px 0 10px rgba(0,0,0,0.2);
-    overflow-y: auto;
-    transition: right 0.25s ease-in-out;
-    z-index: 1000;
+    position: fixed !important;
+    top: 0 !important;
+    right: -100% !important; /* начинаем справа за экраном */
+    width: 50% !important; /* увеличена ширина */
+    height: 100% !important;
+    background: var(--color-surface) !important;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.3) !important;
+    overflow-y: auto !important;
+    transition: right 0.3s ease-in-out !important;
+    z-index: 1001 !important;
+    padding-top: 60px !important; /* отступ сверху */
   }
 
-  /* Скрываем внутренний список до открытия */
+  /* При активации выезжает справа */
+  .nav.active {
+    right: 0 !important; /* ИСПРАВЛЕНО: появляется справа */
+    display: block !important;
+  }
+
   .nav ul {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    gap: 0;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 20px !important;
+    gap: 0 !important;
   }
 
-  /* Открываем меню при active */
-  .burger-btn.active + .nav {
-    right: 0;
-    width: 40% !important;
-  }
-
-  /* Пункты меню */
   .nav ul li a {
-    overflow: visible !important;
-    padding: 15px 20px;
-    border-bottom: 1px solid #eee;
-    text-align: left;
-    font-size: 1em;
+    padding: 15px 20px !important;
+    border-bottom: 1px solid var(--color-border) !important;
+    text-align: left !important;
+    font-size: var(--font-size-base) !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
   }
+  
   .nav ul li:last-child a {
-    border-bottom: none;
+    border-bottom: none !important;
   }
 }
+
 
 /* Убираем серую полосу и подписи в Галерее на мобилах */
 @media (max-width: 768px) {
